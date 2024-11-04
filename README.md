@@ -104,3 +104,29 @@ https://www.apache.org/dyn/closer.cgi?path=/kafka/3.8.0/kafka_2.13-3.8.0.tgz
 ### Notes
 1. Make sure that Kafka and Spark are running before starting the pipeline.
 2. This setup is essential for real-time data processing and visualization.
+
+## The Code in Action
+
+1. The home page of the dashboard displays two graphs showing the behaviour of the model on the test set. 
+
+![Alt text](demo/AsteroidClassifier1.jpg)
+
+2. The graphs are updated when there is new data available (every 30 secs approx.). 
+
+![Alt text](demo/AsteroidClassifier2.jpg)
+
+3. The predict page allows the user to obtain the hazardousness of an asteroid based on input data. The example below shows a non-hazardous asteroid.
+
+![Alt text](demo/AsteroidPredict1.jpg)
+
+4. The example below shows a hazardous asteroid.
+
+![Alt text](demo/AsteroidPredict2.jpg)
+
+5. The table page shows the metadata for the test set displayed in the home page.
+
+![Alt text](demo/AsteroidTable.jpg)
+
+6. The image below shows the logs when the app is running.
+
+![Alt text](demo/AsteroidLogs.jpg)
