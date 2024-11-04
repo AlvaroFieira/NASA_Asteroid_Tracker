@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Asteroid Dashboard</title>
+    <!-- Link to external Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- Link to custom CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1 class="mt-4">Asteroid Classifier Dashboard: {{start_date}} to {{end_date}}</h1>
+        <h4 class="mt-4">Total number of data points used to train model: {{total_points}}</h4>
+        <h4 class="mt-4">Model accuracy: {{accuracy}}</h4>
+        <br/>
+        <div>
+            <h3>Real Values</h3>
+            {{ plot_real_values|safe }} <!-- Insert the Plotly graph for real values -->
+        </div>
+        <br/>
+        <div>
+            <h3>Predicted Values</h3>
+            {{ plot_predicted_values|safe }} <!-- Insert the Plotly graph for predicted values -->
+        </div>
+
+        <!-- Button to view Predictions Table -->
+        <a href="/table" class="btn btn-primary mt-4">View Predictions Table</a>
+
+        <!-- Button to Predict Asteroid Hazardousness -->
+        <a href="/predict" class="btn btn-secondary mt-4">Predict Asteroid Hazardousness</a>
+    </div>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Asteroid Prediction</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Predict Asteroid Hazardousness</h1>
+        <form action="/predict" method="POST">
+            <label for="diameter_min">Estimated Diameter Min (km):</label>
+            <input type="number" id="diameter_min" name="estimated_diameter_km_min" class="form-control"
+                   value="{{ input_data['estimated_diameter_km_min'] if input_data else '' }}" step="any" required>
+
+            <label for="diameter_max">Estimated Diameter Max (km):</label>
+            <input type="number" id="diameter_max" name="estimated_diameter_km_max" class="form-control"
+                   value="{{ input_data['estimated_diameter_km_max'] if input_data else '' }}" step="any" required>
+
+            <label for="velocity">Relative Velocity (km/s):</label>
+            <input type="number" id="velocity" name="relative_velocity_km_s" class="form-control"
+                   value="{{ input_data['relative_velocity_km_s'] if input_data else '' }}" step="any" required>
+
+            <label for="miss_distance">Miss Distance (km):</label>
+            <input type="number" id="miss_distance" name="miss_distance_km" class="form-control"
+                   value="{{ input_data['miss_distance_km'] if input_data else '' }}" step="any" required>
+
+            <input type="submit" value="Predict" class="btn btn-primary">
+        </form>
+
+        <!-- Display the prediction if it exists -->
+        {% if prediction %}
+        <div id="result-box" class="text-center">
+            <h4>Prediction: The asteroid is {{ prediction }}</h4>
+            <p><strong>Your Inputs:</strong></p>
+            <p>Estimated Diameter Min (km): {{ input_data['estimated_diameter_km_min'] }}</p>
+            <p>Estimated Diameter Max (km): {{ input_data['estimated_diameter_km_max'] }}</p>
+            <p>Relative Velocity (km/s): {{ input_data['relative_velocity_km_s'] }}</p>
+            <p>Miss Distance (km): {{ input_data['miss_distance_km'] }}</p>
+        </div>
+        {% endif %}
+
+        <!-- Button to return to home -->
+        <a href="/" class="btn btn-secondary">Return to Home</a>
+    </div>
+</body>
+</html>

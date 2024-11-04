@@ -1,0 +1,131 @@
+/* General body styling */
+body {
+    padding-bottom: 20px;
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa; /* Light grey background */
+}
+
+/* Container styling for proper spacing */
+.container {
+    padding-top: 20px;
+    padding-bottom: 40px;
+    max-width: 800px; /* Set a maximum width for the container */
+    margin: 0 auto; /* Center the container */
+}
+
+/* Heading styling */
+h1 {
+    font-size: 2.5rem;
+    color: #343a40;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+/* Ensure table responsiveness */
+.table-responsive {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch; /* Allows smoother scrolling on mobile */
+}
+
+table {
+    width: 100%; /* Ensure the table takes up full width of the container */
+    border-collapse: collapse; /* Make sure borders collapse for a cleaner look */
+}
+
+table th, table td {
+    border: 1px solid #dee2e6; /* Bootstrap's light border color */
+    padding: 12px 15px;
+    text-align: center;
+    white-space: nowrap; /* Prevent text from wrapping and causing large rows */
+}
+
+table th {
+    background-color: #007bff; /* Bootstrap primary color */
+    color: white;
+}
+
+table tr:nth-child(even) {
+    background-color: #f2f2f2; /* Light background for even rows */
+}
+
+/* Ensure long content doesn't overflow */
+table td {
+    word-wrap: break-word; /* Break long words to avoid overflow */
+}
+
+/* Table responsiveness */
+@media (max-width: 768px) {
+    table {
+        font-size: 0.875rem; /* Smaller font for mobile devices */
+    }
+}
+
+/* Back to dashboard link styling */
+a {
+    color: #007bff;
+    text-decoration: none;
+    font-size: 1.2rem;
+    display: inline-block;
+    margin-top: 20px;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Form label styling */
+form label {
+    font-weight: bold;
+    margin-top: 10px;
+    display: block;
+    color: #343a40;
+}
+
+/* Form input field styling for all input types */
+form input[type="number"],
+form input[type="text"] {
+    width: 100%;
+    margin-top: 5px;
+    margin-bottom: 20px;
+    border: 1px solid #ced4da;
+    padding: 10px 0px;
+    border-radius: 5px;
+    box-sizing: border-box;
+    font-size: 1rem;
+    background-color: #f8f9fa;
+}
+
+/* Button styling */
+form input[type="submit"],
+.btn {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.1rem;
+    padding: 10px 0px;
+    cursor: pointer;
+    width: 100%;
+    display: block;
+    margin-top: 10px;
+}
+
+form input[type="submit"]:hover,
+.btn:hover {
+    background-color: #0056b3;
+}
+
+/* Button styling for the 'Return to Home' button */
+.btn-secondary {
+    background-color: #6c757d;
+    display: block;
+    text-align: center;
+    display: block;
+    padding: 10px 0px;
+    width: 100%;
+    margin-top: 20px;
+}
+
+.btn-secondary:hover {
+    background-color: #5a6268;
+}

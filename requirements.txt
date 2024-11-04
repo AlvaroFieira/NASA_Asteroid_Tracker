@@ -1,0 +1,10 @@
+kafka
+kafka-python-ng
+pyspark
+setuptools
+requests
+datetime
+python-dotenv
+plotly
+pandas
+flask
